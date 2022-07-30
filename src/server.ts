@@ -27,8 +27,7 @@ import { generateJWT, requireAuth } from "./auth-utils";
     "/filteredimage",
     requireAuth,
     async (req: Request, res: Response) => {
-      console.log("rentre");
-      let { image_url } = req.query;
+      let { image_url }: { image_url: string } = req.query;
       if (!image_url) {
         res.status(400).send({ message: "Invalid Image url" });
       }
